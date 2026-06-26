@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>D8110C00001 Protocol Amendment Summary of Changes</title>
+<style>
+  body {
+    font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1c1c1c;
+    max-width: 1280px;
+    margin: 24px auto;
+    padding: 0 24px;
+    background: #fdfdfd;
+  }
+  h1 { color: #1e4d8c; font-size: 22px; margin: 0 0 8px; }
+  h2 { color: #1e4d8c; font-size: 16px; margin: 28px 0 8px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+  h3 { color: #1e4d8c; font-size: 14px; margin: 16px 0 6px; }
+  .intro { color: #444; font-style: italic; margin-bottom: 20px; }
+  a { color: #0563c1; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, .mono { font-family: ui-monospace, Consolas, Menlo, monospace; font-size: 12px; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0 12px; font-size: 13px; }
+  th, td { border: 1px solid #cfd8e6; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #eef4ff; font-weight: 600; }
+  tbody tr:nth-child(even) { background: #fafbfd; }
+  .coverage-table { max-width: 1100px; }
+  .coverage-table th:nth-child(1) { width: 45%; }
+  .coverage-table th:nth-child(2) { width: 10%; }
+  .coverage-table th:nth-child(3) { width: 45%; }
+  .num { text-align: right; font-weight: 600; color: #1e4d8c; }
+  .amds { font-size: 12px; color: #333; }
+  .latest-protocol { margin: 8px 0 12px; font-size: 13px; }
+
+  .trial-menu { display: flex; gap: 4px; flex-wrap: wrap; align-items: center;
+                padding: 8px 12px; background: #eef4ff;
+                border: 1px solid #cfd8e6; border-radius: 4px;
+                font-size: 13px; margin-bottom: 16px; }
+  .trial-menu a { padding: 4px 10px; border-radius: 3px;
+                  color: #0563c1; text-decoration: none; }
+  .trial-menu a:hover { background: #d8e6f8; }
+  .trial-menu a.current { background: #1e4d8c; color: white; font-weight: 600; }
+  .trial-menu .sep { color: #999; }
+
+
+  /* Top-level amendment list */
+  .amd-summary th:nth-child(1) { width: 18%; }
+  .amd-summary th:nth-child(2) { width: 14%; }
+  .amd-summary th:nth-child(3) { width: 30%; }
+  .amd-summary th:nth-child(4) { width: 38%; }
+
+  /* Change-table */
+  .change-table th:nth-child(1) { width: 24%; }
+  .change-table th:nth-child(2) { width: 44%; }
+  .change-table th:nth-child(3) { width: 32%; }
+  .change-table td p { margin: 0 0 6px; }
+  .cell-bullets { margin: 4px 0 0; padding-left: 18px; }
+  .cell-bullets li { margin-bottom: 4px; }
+
+  .avail-cell .file { display: block; }
+  .avail-cell .tag {
+    display: block;
+    font-size: 11px;
+    color: #707070;
+    margin-bottom: 6px;
+  }
+  .avail-cell .summary-only {
+    font-style: italic;
+    color: #993300;
+    font-size: 12px;
+  }
+  .label-cell { font-weight: 600; color: #1e4d8c; }
+  .date-cell { color: #444; white-space: nowrap; }
+  .rationale-cell p { margin: 0 0 6px; }
+  details { margin: 10px 0; padding: 6px 0; }
+  details summary { cursor: pointer; font-weight: 600; color: #1e4d8c;
+                    padding: 4px 0; }
+  .footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #707070;
+    font-style: italic;
+    border-top: 1px solid #ddd;
+    padding-top: 12px;
+  }
+</style>
+</head>
+<body>
+<nav class='trial-menu'><a href='index.html' class=''>Index</a><span class='sep'>|</span><a href='c4591001-mth6-amendment-summary-of-changes.html' class=''>C4591001</a><span class='sep'>|</span><a href='c4591007-amendment-summary-of-changes.html' class=''>C4591007</a><span class='sep'>|</span><a href='c4591015-amendment-summary-of-changes.html' class=''>C4591015</a><span class='sep'>|</span><a href='c4591020-amendment-summary-of-changes.html' class=''>C4591020</a><span class='sep'>|</span><a href='c4591024-amendment-summary-of-changes.html' class=''>C4591024</a><span class='sep'>|</span><a href='moderna-p201-amendment-summary-of-changes.html' class=''>Moderna P201</a><span class='sep'>|</span><a href='moderna-p301-cove-amendment-summary-of-changes.html' class=''>Moderna P301 (COVE)</a><span class='sep'>|</span><a href='az-d8110c00001-amendment-summary-of-changes.html' class='current'>AZ D8110C00001</a><span class='sep'>|</span><a href='jj-ensemble-amendment-summary-of-changes.html' class=''>J&amp;J ENSEMBLE</a><span class='sep'>|</span><a href='jj-ensemble2-amendment-summary-of-changes.html' class=''>J&amp;J ENSEMBLE 2</a></nav><h1>D8110C00001 &mdash; Protocol Amendment Summary of Changes <small style='color:#666;font-size:14px;font-weight:normal;'>(AstraZeneca AZD1222 / Vaxzevria pivotal Phase 3)</small></h1><p class='intro'>AstraZeneca&rsquo;s pivotal Phase 3 randomized, double-blind, placebo-controlled efficacy trial of AZD1222 (the ChAdOx1-S non-replicating adenovirus vector vaccine, marketed as Vaxzevria) in adults &ge;18&nbsp;years &mdash; approximately 32,400 participants across the US, Chile, and Peru (88 sites). Funded by BARDA with DoD JPEO-CBRND, Army Contracting Command, and NIAID. AZD1222 was never authorized in the US, but Vaxzevria is authorized in many other countries. The source PDF is AstraZeneca&rsquo;s Final Protocol Amendment 6 hosted on clinicaltrials.gov; AstraZeneca did not include detailed Section&nbsp;/&nbsp;Description&nbsp;/&nbsp;Rationale tables for prior amendments (only the DOCUMENT HISTORY dates are reproduced for Amendments 1&ndash;5).</p><h2>Coverage at a glance</h2><p class='latest-protocol'><strong>Latest protocol we have:</strong> <a href='https://cdn.clinicaltrials.gov/large-docs/46/NCT04516746/Prot_000.pdf' class='mono'>az-d8110c00001-NCT04516746-protocol.pdf</a></p><table class='coverage-table'><thead><tr><th>Category</th><th>Count</th><th>Amendments</th></tr></thead><tbody><tr><td>Total documents in the history (Original + Amendments 1&ndash;6)</td><td class='num'>7</td><td class='amds'></td></tr><tr><td>Direct PDFs available</td><td class='num'>1</td><td class='amds'>Amendment 6</td></tr><tr><td>Summary-only (date recorded here, no full PDF available)</td><td class='num'>6</td><td class='amds'>Amendments 1, 2, 3, 4, 5; Original Protocol</td></tr></tbody></table><h2>Amendment timeline</h2><table class='amd-summary'><thead><tr><th>Document</th><th>Date</th><th>Available documents</th><th>Main rationale for the amendment</th></tr></thead><tbody><tr><td class='label-cell'>Original Protocol</td><td class='date-cell'>15 July 2020</td><td class='avail-cell'><span class='summary-only'>Summary only &mdash; no full PDF of this version available</span></td><td class='rationale-cell'><p><em>(no main-rationale paragraph in source)</em></p></td></tr><tr><td class='label-cell'>Amendment 1</td><td class='date-cell'>10 August 2020</td><td class='avail-cell'><span class='summary-only'>Summary only &mdash; no full PDF of this version available</span></td><td class='rationale-cell'><p><em>(no main-rationale paragraph in source)</em></p></td></tr><tr><td class='label-cell'>Amendment 2</td><td class='date-cell'>17 September 2020</td><td class='avail-cell'><span class='summary-only'>Summary only &mdash; no full PDF of this version available</span></td><td class='rationale-cell'><p><em>(no main-rationale paragraph in source)</em></p></td></tr><tr><td class='label-cell'>Amendment 3</td><td class='date-cell'>26 October 2020</td><td class='avail-cell'><span class='summary-only'>Summary only &mdash; no full PDF of this version available</span></td><td class='rationale-cell'><p><em>(no main-rationale paragraph in source)</em></p></td></tr><tr><td class='label-cell'>Amendment 4</td><td class='date-cell'>14 December 2020</td><td class='avail-cell'><span class='summary-only'>Summary only &mdash; no full PDF of this version available</span></td><td class='rationale-cell'><p><em>(no main-rationale paragraph in source)</em></p></td></tr><tr><td class='label-cell'>Amendment 5</td><td class='date-cell'>18 January 2021</td><td class='avail-cell'><span class='summary-only'>Summary only &mdash; no full PDF of this version available</span></td><td class='rationale-cell'><p><em>(no main-rationale paragraph in source)</em></p></td></tr><tr><td class='label-cell'>Amendment 6</td><td class='date-cell'>19 February 2021</td><td class='avail-cell'><a href='https://cdn.clinicaltrials.gov/large-docs/46/NCT04516746/Prot_000.pdf' class='file mono'>az-d8110c00001-NCT04516746-protocol.pdf</a><span class='tag'>clinicaltrials.gov (NCT04516746)</span></td><td class='rationale-cell'><p>The principal reason for this amendment was to remove the extended dosing interval assessment and to remove adolescents from the study population that were added to Amendment 5. (Note: Amendment 5 was not implemented.)</p></td></tr></tbody></table><h2>Detailed change-tables per amendment</h2><p class='intro'>For each amendment that ships a &lsquo;Summary of Major Changes&rsquo; table in the source PDF, the full Section&nbsp;/&nbsp;Description&nbsp;/&nbsp;Rationale rows are reproduced below. The Original protocol typically has no change-table (nothing to compare against).</p><details open><summary>Original Protocol &mdash; 15 July 2020 (0 change rows)</summary><p><em>(no detailed Section / Description / Rationale table for this amendment in the source PDF)</em></p></details><details open><summary>Amendment 1 &mdash; 10 August 2020 (0 change rows)</summary><p><em>(no detailed Section / Description / Rationale table for this amendment in the source PDF)</em></p></details><details open><summary>Amendment 2 &mdash; 17 September 2020 (0 change rows)</summary><p><em>(no detailed Section / Description / Rationale table for this amendment in the source PDF)</em></p></details><details open><summary>Amendment 3 &mdash; 26 October 2020 (0 change rows)</summary><p><em>(no detailed Section / Description / Rationale table for this amendment in the source PDF)</em></p></details><details open><summary>Amendment 4 &mdash; 14 December 2020 (0 change rows)</summary><p><em>(no detailed Section / Description / Rationale table for this amendment in the source PDF)</em></p></details><details open><summary>Amendment 5 &mdash; 18 January 2021 (0 change rows)</summary><p><em>(no detailed Section / Description / Rationale table for this amendment in the source PDF)</em></p></details><details open><summary>Amendment 6 &mdash; 19 February 2021 (17 change rows)</summary><table class='change-table'><thead><tr><th>Section # and Name</th><th>Description of Change</th><th>Brief Rationale</th></tr></thead><tbody><tr><td>Title Page, 1.1 Synopsis</td><td>Removed “and Adolescents” from the title</td><td>Given removal of adolescents from the study population</td></tr><tr><td>1.1 Synopsis, 2.1 Study Rationale</td><td>Removed text from the study rationale regarding adolescents</td><td></td></tr><tr><td>1.1 Synopsis</td><td>Reduced the number of study sites from 300 to 150</td><td>To more realistically align with the actual number of sites</td></tr><tr><td>1.1 Synopsis, 3 Objective and Endpoints, Appendix F (Table 15)</td><td>Upgraded exploratory endpoint 5 to secondary endpoint 9</td><td>To gain information on efficacy following a single dose of AZD1222</td></tr><tr><td>1.1 Synopsis, 1.2 Schema, 1.3 Schedule of Activities 3 Objectives and Endpoints, 4.1 Overall Design, 4.2 Scientific Rationale for Study Design, 4.3 Justification for Dose, 4.4 End of Study Definition, 5 Study Population, 6.1.2 Dosing Instructions, 6.3 Measures to Minimize Bias: Randomization and Blinding, 7.1 Discontinuation of Study Intervention 8 Study Assessments</td><td>Removed Appendix G Part 2 and any cross-references to Appendix G Part 2</td><td>Given removal of Part 2 from the protocol</td></tr><tr><td></td><td>Removed the “Part 1” label from the main study and corresponding substudy and immunogenicity cohort</td><td></td></tr><tr><td>and Procedures, 9 Statistical Considerations, Appendix G Part 2</td><td></td><td></td></tr><tr><td>1.1 Synopsis, Appendix F (Table 15)</td><td>Removed specification that primary objective 3 and secondary objectives 7-8 apply to both Part 1 and Part 2</td><td>Given removal of Part 2 from the protocol</td></tr><tr><td>3 Objectives and Endpoints</td><td>Removed specification that primary objective 3, secondary objectives 7-8, and exploratory objectives 5-13 apply to both Part 1 and Part 2</td><td>Given removal of Part 2 from the protocol</td></tr><tr><td></td><td>Removed footnote d from Table 5 that indicated exploratory endpoint 5 is an exploratory endpoint for Part 1, but a secondary endpoint for Part 2</td><td></td></tr><tr><td>4.2.2 Rationale for Study Endpoints, 8.3.9 Adverse Events of Special Interest, 11 References, Appendix E</td><td>Removed the Serazin et al 2020 and Vogel et al 2020 references</td><td>Given removal of the multisystem inflammatory syndrome in children and adults (MIS-C/A) and acute respiratory distress syndrome (ARDS) terms from Appendix E, Table 13</td></tr><tr><td>8.1.2.1 SARS-CoV-2 Testing and Other Virology Assessments</td><td>Added text to explain that genotypic evaluation of SARS-CoV-2 is planned at Days 1 and 14 illness visits but may be performed at Days 21 and 28 illness visits based upon logistical constraints, safety signals, or emerging data on efficacy of AZD1222 against viral variants</td><td>Clarification</td></tr><tr><td>9.4.2.2 Secondary Endpoints, Appendix F (Table 15)</td><td>Revised the list of secondary endpoints to align with the Synopsis and Section 3 of the protocol</td><td>Consistency</td></tr><tr><td>A5 Committee Structure</td><td>Revised this section</td><td>To align with the current version of the statistical analysis plan</td></tr><tr><td>Appendix E (Table 13)</td><td>Removed reference to MIS-C/A and ARDS</td><td>Given removal of the adolescent population</td></tr><tr><td>Appendix G Part 2</td><td>Removed this appendix</td><td>Given removal of Part 2 from the protocol</td></tr><tr><td>Throughout</td><td>Minor editorial revisions</td><td>Minor, therefore, were not summarized</td></tr></tbody></table></details><p class='footer'>Source PDF: <a href='https://cdn.clinicaltrials.gov/large-docs/46/NCT04516746/Prot_000.pdf' class='mono'>az-d8110c00001-NCT04516746-protocol.pdf</a> &middot; Total pages in source: 131. DOCUMENT HISTORY and per-amendment change-tables are read directly from the PDF's table layout via PyMuPDF; every cell is verbatim from the source.</p></body></html>

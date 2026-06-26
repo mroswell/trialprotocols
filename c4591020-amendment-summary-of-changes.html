@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>C4591020 Protocol Amendment Summary of Changes</title>
+<style>
+  body {
+    font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1c1c1c;
+    max-width: 1280px;
+    margin: 24px auto;
+    padding: 0 24px;
+    background: #fdfdfd;
+  }
+  h1 { color: #1e4d8c; font-size: 22px; margin: 0 0 8px; }
+  h2 { color: #1e4d8c; font-size: 16px; margin: 28px 0 8px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+  .intro { color: #444; font-style: italic; margin-bottom: 20px; }
+  a { color: #0563c1; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, .mono { font-family: ui-monospace, Consolas, Menlo, monospace; font-size: 12px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; font-size: 13px; }
+  th, td { border: 1px solid #cfd8e6; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #eef4ff; font-weight: 600; }
+  tbody tr:nth-child(even) { background: #fafbfd; }
+  .coverage-table { max-width: 1100px; }
+  .coverage-table th:nth-child(1) { width: 45%; }
+  .coverage-table th:nth-child(2) { width: 10%; }
+  .coverage-table th:nth-child(3) { width: 45%; }
+  .num { text-align: right; font-weight: 600; color: #1e4d8c; }
+  .amds { font-size: 12px; color: #333; }
+  .latest-protocol { margin: 8px 0 12px; font-size: 13px; }
+
+  .trial-menu { display: flex; gap: 4px; flex-wrap: wrap; align-items: center;
+                padding: 8px 12px; background: #eef4ff;
+                border: 1px solid #cfd8e6; border-radius: 4px;
+                font-size: 13px; margin-bottom: 16px; }
+  .trial-menu a { padding: 4px 10px; border-radius: 3px;
+                  color: #0563c1; text-decoration: none; }
+  .trial-menu a:hover { background: #d8e6f8; }
+  .trial-menu a.current { background: #1e4d8c; color: white; font-weight: 600; }
+  .trial-menu .sep { color: #999; }
+
+  .main-table th:nth-child(1) { width: 20%; }
+  .main-table th:nth-child(2) { width: 11%; }
+  .main-table th:nth-child(3) { width: 19%; }
+  .main-table th:nth-child(4) { width: 50%; }
+  body.hide-summary .main-table th:nth-child(4),
+  body.hide-summary .main-table td:nth-child(4) { display: none; }
+  body.hide-summary .main-table th:nth-child(1) { width: 28%; }
+  body.hide-summary .main-table th:nth-child(2) { width: 18%; }
+  body.hide-summary .main-table th:nth-child(3) { width: 54%; }
+  .doc-cell { font-weight: 600; color: #1e4d8c; }
+  .date-cell { color: #444; white-space: nowrap; }
+  .rationale-cell ul { margin: 4px 0 0; padding-left: 18px; }
+  .rationale-cell li { margin-bottom: 4px; font-size: 14px; }
+  .rationale-cell p { margin: 0 0 6px; }
+  .avail-cell .file { display: block; }
+  .avail-cell .tag {
+    display: block;
+    font-size: 11px;
+    color: #707070;
+    margin-bottom: 6px;
+  }
+  .avail-cell .summary-only {
+    font-style: italic;
+    color: #993300;
+    font-size: 12px;
+  }
+  .controls {
+    margin: 8px 0 16px;
+    padding: 8px 12px;
+    background: #f4f7fb;
+    border: 1px solid #cfd8e6;
+    border-radius: 4px;
+    font-size: 13px;
+    display: inline-block;
+  }
+  .controls label { cursor: pointer; user-select: none; }
+  .controls input[type="checkbox"] { margin-right: 6px; vertical-align: -2px; }
+  .footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #707070;
+    font-style: italic;
+    border-top: 1px solid #ddd;
+    padding-top: 12px;
+  }
+</style>
+</head>
+<body>
+<nav class='trial-menu'><a href='index.html' class=''>Index</a><span class='sep'>|</span><a href='c4591001-mth6-amendment-summary-of-changes.html' class=''>C4591001</a><span class='sep'>|</span><a href='c4591007-amendment-summary-of-changes.html' class=''>C4591007</a><span class='sep'>|</span><a href='c4591015-amendment-summary-of-changes.html' class=''>C4591015</a><span class='sep'>|</span><a href='c4591020-amendment-summary-of-changes.html' class='current'>C4591020</a><span class='sep'>|</span><a href='c4591024-amendment-summary-of-changes.html' class=''>C4591024</a><span class='sep'>|</span><a href='moderna-p201-amendment-summary-of-changes.html' class=''>Moderna P201</a><span class='sep'>|</span><a href='moderna-p301-cove-amendment-summary-of-changes.html' class=''>Moderna P301 (COVE)</a><span class='sep'>|</span><a href='az-d8110c00001-amendment-summary-of-changes.html' class=''>AZ D8110C00001</a><span class='sep'>|</span><a href='jj-ensemble-amendment-summary-of-changes.html' class=''>J&amp;J ENSEMBLE</a><span class='sep'>|</span><a href='jj-ensemble2-amendment-summary-of-changes.html' class=''>J&amp;J ENSEMBLE 2</a></nav><h1>C4591020 &mdash; Protocol Amendment Summary of Changes <small style='color:#666;font-size:14px;font-weight:normal;'>(Pfizer healthcare workers / household contacts trial)</small></h1><p class='intro'>Pfizer/BioNTech&rsquo;s Phase 4 real-world effectiveness study of BNT162b2 in U.S. healthcare workers, first responders, and other essential frontline workers, plus their household contacts. Run alongside the pivotal C4591001 trial to capture vaccine effectiveness in higher-exposure occupations and to characterize SARS-CoV-2 transmission dynamics within households of vaccinated participants.</p><h2>Coverage at a glance</h2><p class='latest-protocol'><strong>Latest protocol we have:</strong> <a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S222_M5_c4591020-protocol.pdf' class='mono'>019736_S222_M5_c4591020-protocol.pdf</a></p><table class='coverage-table'><thead><tr><th>Category</th><th>Count</th><th>Amendments</th></tr></thead><tbody><tr><td>Total documents in the history</td><td class='num'>1</td><td class='amds'></td></tr><tr><td>Direct PDFs available</td><td class='num'>1</td><td class='amds'>Original protocol</td></tr><tr><td>Summary-only (date and rationale recorded here, no full PDF available)</td><td class='num'>0</td><td class='amds'>(none)</td></tr></tbody></table><h2>Amendment-by-amendment table</h2>
+<div class='controls'>
+  <label>
+    <input type='checkbox' id='toggle-summary' checked
+           onchange='document.body.classList.toggle("hide-summary", !this.checked)'>
+    Show the &lsquo;Summary and Rationale for Changes&rsquo; column
+  </label>
+</div>
+<table class='main-table'>
+<thead><tr>
+  <th>Document</th>
+  <th>Version Date</th>
+  <th>Available documents</th>
+  <th>Summary and Rationale for Changes</th>
+</tr></thead><tbody><tr><td class='doc-cell'>Original protocol</td><td class='date-cell'>18 Jan 2021</td><td class='avail-cell'><a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S222_M5_c4591020-protocol.pdf' class='file mono'>019736_S222_M5_c4591020-protocol.pdf</a><span class='tag'>PHMPT individual</span></td><td class='rationale-cell'><p>N/A</p></td></tr></tbody></table><p class='footer'>Source PDF: <a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S222_M5_c4591020-protocol.pdf' class='mono'>019736_S222_M5_c4591020-protocol.pdf</a> &middot; Total pages in source: 87. Bullet structure reconstructed from the PDF text layout &mdash; every word is verbatim from the source.</p></body></html>

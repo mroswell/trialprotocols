@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>C4591007 Protocol Amendment Summary of Changes</title>
+<style>
+  body {
+    font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1c1c1c;
+    max-width: 1280px;
+    margin: 24px auto;
+    padding: 0 24px;
+    background: #fdfdfd;
+  }
+  h1 { color: #1e4d8c; font-size: 22px; margin: 0 0 8px; }
+  h2 { color: #1e4d8c; font-size: 16px; margin: 28px 0 8px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+  .intro { color: #444; font-style: italic; margin-bottom: 20px; }
+  a { color: #0563c1; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, .mono { font-family: ui-monospace, Consolas, Menlo, monospace; font-size: 12px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; font-size: 13px; }
+  th, td { border: 1px solid #cfd8e6; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #eef4ff; font-weight: 600; }
+  tbody tr:nth-child(even) { background: #fafbfd; }
+  .coverage-table { max-width: 1100px; }
+  .coverage-table th:nth-child(1) { width: 45%; }
+  .coverage-table th:nth-child(2) { width: 10%; }
+  .coverage-table th:nth-child(3) { width: 45%; }
+  .num { text-align: right; font-weight: 600; color: #1e4d8c; }
+  .amds { font-size: 12px; color: #333; }
+  .latest-protocol { margin: 8px 0 12px; font-size: 13px; }
+
+  .trial-menu { display: flex; gap: 4px; flex-wrap: wrap; align-items: center;
+                padding: 8px 12px; background: #eef4ff;
+                border: 1px solid #cfd8e6; border-radius: 4px;
+                font-size: 13px; margin-bottom: 16px; }
+  .trial-menu a { padding: 4px 10px; border-radius: 3px;
+                  color: #0563c1; text-decoration: none; }
+  .trial-menu a:hover { background: #d8e6f8; }
+  .trial-menu a.current { background: #1e4d8c; color: white; font-weight: 600; }
+  .trial-menu .sep { color: #999; }
+
+  .main-table th:nth-child(1) { width: 20%; }
+  .main-table th:nth-child(2) { width: 11%; }
+  .main-table th:nth-child(3) { width: 19%; }
+  .main-table th:nth-child(4) { width: 50%; }
+  body.hide-summary .main-table th:nth-child(4),
+  body.hide-summary .main-table td:nth-child(4) { display: none; }
+  body.hide-summary .main-table th:nth-child(1) { width: 28%; }
+  body.hide-summary .main-table th:nth-child(2) { width: 18%; }
+  body.hide-summary .main-table th:nth-child(3) { width: 54%; }
+  .doc-cell { font-weight: 600; color: #1e4d8c; }
+  .date-cell { color: #444; white-space: nowrap; }
+  .rationale-cell ul { margin: 4px 0 0; padding-left: 18px; }
+  .rationale-cell li { margin-bottom: 4px; font-size: 14px; }
+  .rationale-cell p { margin: 0 0 6px; }
+  .avail-cell .file { display: block; }
+  .avail-cell .tag {
+    display: block;
+    font-size: 11px;
+    color: #707070;
+    margin-bottom: 6px;
+  }
+  .avail-cell .summary-only {
+    font-style: italic;
+    color: #993300;
+    font-size: 12px;
+  }
+  .controls {
+    margin: 8px 0 16px;
+    padding: 8px 12px;
+    background: #f4f7fb;
+    border: 1px solid #cfd8e6;
+    border-radius: 4px;
+    font-size: 13px;
+    display: inline-block;
+  }
+  .controls label { cursor: pointer; user-select: none; }
+  .controls input[type="checkbox"] { margin-right: 6px; vertical-align: -2px; }
+  .footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #707070;
+    font-style: italic;
+    border-top: 1px solid #ddd;
+    padding-top: 12px;
+  }
+</style>
+</head>
+<body>
+<nav class='trial-menu'><a href='index.html' class=''>Index</a><span class='sep'>|</span><a href='c4591001-mth6-amendment-summary-of-changes.html' class=''>C4591001</a><span class='sep'>|</span><a href='c4591007-amendment-summary-of-changes.html' class='current'>C4591007</a><span class='sep'>|</span><a href='c4591015-amendment-summary-of-changes.html' class=''>C4591015</a><span class='sep'>|</span><a href='c4591020-amendment-summary-of-changes.html' class=''>C4591020</a><span class='sep'>|</span><a href='c4591024-amendment-summary-of-changes.html' class=''>C4591024</a><span class='sep'>|</span><a href='moderna-p201-amendment-summary-of-changes.html' class=''>Moderna P201</a><span class='sep'>|</span><a href='moderna-p301-cove-amendment-summary-of-changes.html' class=''>Moderna P301 (COVE)</a><span class='sep'>|</span><a href='az-d8110c00001-amendment-summary-of-changes.html' class=''>AZ D8110C00001</a><span class='sep'>|</span><a href='jj-ensemble-amendment-summary-of-changes.html' class=''>J&amp;J ENSEMBLE</a><span class='sep'>|</span><a href='jj-ensemble2-amendment-summary-of-changes.html' class=''>J&amp;J ENSEMBLE 2</a></nav><h1>C4591007 &mdash; Protocol Amendment Summary of Changes <small style='color:#666;font-size:14px;font-weight:normal;'>(Pfizer pediatric trial, 6&nbsp;months to &lt;12&nbsp;years)</small></h1><p class='intro'>Pfizer/BioNTech&rsquo;s pediatric Phase 1/2/3 study of BNT162b2 in children 6 months to &lt;12 years, using lower dose levels (3&nbsp;&micro;g and 10&nbsp;&micro;g) given as two injections 21 days apart. Immunogenicity was bridged to 16&ndash;25 year-olds from C4591001; safety and immunogenicity endpoints support the successive pediatric authorizations (5&ndash;11 year-olds in October 2021; 6 months to 4 years in June 2022).</p><h2>Coverage at a glance</h2><p class='latest-protocol'><strong>Latest protocol we have:</strong> <a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S488_M5_c4591007-protocol-amend3.pdf' class='mono'>019736_S488_M5_c4591007-protocol-amend3.pdf</a></p><table class='coverage-table'><thead><tr><th>Category</th><th>Count</th><th>Amendments</th></tr></thead><tbody><tr><td>Total documents in the history (Original + Amendments 1–3)</td><td class='num'>4</td><td class='amds'></td></tr><tr><td>Direct PDFs available</td><td class='num'>3</td><td class='amds'>Amendments 1, 2, 3</td></tr><tr><td>Summary-only (date and rationale recorded here, no full PDF available)</td><td class='num'>1</td><td class='amds'>Original protocol</td></tr></tbody></table><h2>Amendment-by-amendment table</h2>
+<div class='controls'>
+  <label>
+    <input type='checkbox' id='toggle-summary' checked
+           onchange='document.body.classList.toggle("hide-summary", !this.checked)'>
+    Show the &lsquo;Summary and Rationale for Changes&rsquo; column
+  </label>
+</div>
+<table class='main-table'>
+<thead><tr>
+  <th>Document</th>
+  <th>Version Date</th>
+  <th>Available documents</th>
+  <th>Summary and Rationale for Changes</th>
+</tr></thead><tbody><tr><td class='doc-cell'>Original protocol</td><td class='date-cell'>05 Feb 2021</td><td class='avail-cell'><span class='summary-only'>Summary only &mdash; no full PDF of this version available</span></td><td class='rationale-cell'><p>N/A</p></td></tr><tr><td class='doc-cell'>Amendment 1</td><td class='date-cell'>05 Mar 2021</td><td class='avail-cell'><a href='https://phmpt.org/wp-content/uploads/2023/04/125742_S2_M5_5351_c4591007-protocol-amend1.pdf' class='file mono'>125742_S2_M5_5351_c4591007-protocol-amend1.pdf</a><span class='tag'>PHMPT individual</span></td><td class='rationale-cell'><ul><li>Added 2 age groups to the study: participants ≥2 to &lt;5 years and ≥6 months to &lt;2 years of age, to also study safety and immunogenicity in these age groups.</li><li>Updated efficacy objectives to apply across ages in which immunobridging has been successful, if 22 cases are accrued.</li><li>Made updates to match Pfizer’s response to 04 February 2021 CBER comments regarding this study, ie:</li><li>Exclusion criterion 3 applied to all study participants rather than just to Phase 1 participants.</li><li>References to “noninferiority” updated to “immunobridging.”</li><li>Made additions to the exclusion criteria for previous or current diagnosis of MIS-C.</li><li>Added to the exclusion criteria receipt of any passive antibody therapy specific to COVID-19 within 90 days prior to enrollment.</li><li>Specified that placebo recipients who decline BNT162b2 will be followed for 24 months (Visits X and Y).</li><li>Temporary delay of study intervention criteria regarding nonstudy vaccination updated to be most permissive, ie, to allow easier scheduling around childhood routine vaccinations.</li><li>Added the following symptoms as prompts to complete the COVID-19/MIS-C illness e-diary:</li><li>Inability to eat/poor feeding in participants &lt;5 years of age;</li><li>Abdominal pain;</li><li>Hospitalization due to confirmed COVID-19 infection.</li><li>Following updates made to the first confirmed COVID-19 case definition to accommodate inclusion of participants &lt;5 years of age:</li><li>Definition of diarrhea added.</li><li>Inability to eat/poor feeding in participants &lt;5 years of age added as an additional symptom.</li><li>Definition of SARS-CoV-2–related hospitalization added.</li><li>RR and HR required to meet the SARS-CoV-2– related severe case definition specified by participant age. Table 4 inserted.</li><li>Added that cell-mediated immune responses will be described following isolation of PBMCs in a subset of Phase 2/3 participants ≥10 years of age. Corresponding visit (Visit 3) added approximately 7 days after Dose 2.</li></ul></td></tr><tr><td class='doc-cell'>Amendment 2</td><td class='date-cell'>06 Aug 2021</td><td class='avail-cell'><a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S444_M5_c4591007-protocol-amend2.pdf' class='file mono'>019736_S444_M5_c4591007-protocol-amend2.pdf</a><span class='tag'>PHMPT individual</span><a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S444_M5_c4591007-protocol-amend2-track.pdf' class='file mono'>019736_S444_M5_c4591007-protocol-amend2-track.pdf</a><span class='tag'>PHMPT individual</span></td><td class='rationale-cell'><ul><li>Made the following updates in response to commitments made to CBER concerning myocarditis and pericarditis:</li><li>Insertion of additional row in risk assessment table in risk assessment section.</li><li>Addition of myocarditis and pericarditis in Adverse Events of Special Interest section.</li><li>Addition of a procedure to any visit that occurs sooner than 1 month after any vaccination.</li><li>Addition of an unplanned visit to capture data pertaining to myocarditis and pericarditis.</li><li>Revised protocol title to reflect the changes in age and dose evaluation.</li><li>Updated to allow an additional 2250 Phase 2/3 selected-dose participants to enlarge the size of the pediatric safety database.</li><li>Added Phase 1/2/3 evaluation of lower dose levels for children and young adults with corresponding objectives.</li><li>Revised the order of Visit 1 activities to clarify when procedures should be conducted in relation to study intervention administration when the visit occurs over 2 consecutive days.</li><li>Added updates and reformatted activities in the SoA.</li><li>Removed the requirement to conduct a potential COVID-19 convalescent visit following each potential COVID-19 illness visit. The collection of the blood sample was to support an exploratory endpoint, which will be addressed with external data and thereby reduce burden to participants and caregivers.</li><li>Added a country-specific appendix that allows flexibility to conduct scheduled follow-up visits in the participant’s home, ie, site-arranged home health visits, as permitted per local guidelines (applicable to Poland only).</li></ul></td></tr><tr><td class='doc-cell'>Amendment 3</td><td class='date-cell'>10 Sep 2021</td><td class='avail-cell'><a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S488_M5_c4591007-protocol-amend3.pdf' class='file mono'>019736_S488_M5_c4591007-protocol-amend3.pdf</a><span class='tag'>PHMPT individual</span><a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S488_M5_c4591007-protocol-amend3-track.pdf' class='file mono'>019736_S488_M5_c4591007-protocol-amend3-track.pdf</a><span class='tag'>PHMPT individual</span></td><td class='rationale-cell'><ul><li>Updated to allow an additional 2250 Phase 2/3 selected-dose participants &lt;5 years of age, to enlarge the size of the pediatric safety database. This has resulted in the total number of participants in this portion of the study increasing to approximately 9000 participants.</li><li>Included blood draws, procedures, and objectives for potential troponin I testing in participants 5 to &lt;12 and 12 to &lt;16 years.</li><li>Added the rationale for collecting serum samples for potential troponin I testing.</li><li>Revised an objective and corresponding endpoints to describe severe COVID-19 cases in participants in the selected-dose portion of the study.</li><li>Clarified the process for participants who become eligible for receipt of BNT162b2 or another COVID-19 vaccine prior to Visit 5 (6-month follow-up visit).</li><li>Added a second definition of symptoms of severe COVID-19 disease per the CDC definition.</li><li>Clarified instructions on how to unblind participants at the 6-month follow-up visit.</li><li>Updated information on the recording of nonstudy vaccination and concomitant medications.</li></ul></td></tr></tbody></table><p class='footer'>Source PDF: <a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S488_M5_c4591007-protocol-amend3.pdf' class='mono'>019736_S488_M5_c4591007-protocol-amend3.pdf</a> &middot; Total pages in source: 212. Bullet structure reconstructed from the PDF text layout &mdash; every word is verbatim from the source.</p></body></html>
