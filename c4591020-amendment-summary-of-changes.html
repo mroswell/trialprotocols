@@ -5,20 +5,20 @@
 <title>C4591020 Protocol Amendment Summary of Changes</title>
 <style>
   body {
-    font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #1c1c1c;
     max-width: 1280px;
     margin: 24px auto;
     padding: 0 24px;
     background: #fdfdfd;
   }
-  h1 { color: #1e4d8c; font-size: 22px; margin: 0 0 8px; }
-  h2 { color: #1e4d8c; font-size: 16px; margin: 28px 0 8px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+  h1 { color: #1e4d8c; font-size: 25px; margin: 0 0 8px; }
+  h2 { color: #1e4d8c; font-size: 19px; margin: 28px 0 8px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
   .intro { color: #444; font-style: italic; margin-bottom: 20px; }
   a { color: #0563c1; text-decoration: none; }
   a:hover { text-decoration: underline; }
-  code, .mono { font-family: ui-monospace, Consolas, Menlo, monospace; font-size: 12px; }
-  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; font-size: 13px; }
+  code, .mono { font-family: ui-monospace, Consolas, Menlo, monospace; font-size: 15px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; font-size: 15px; }
   th, td { border: 1px solid #cfd8e6; padding: 8px 10px; text-align: left; vertical-align: top; }
   th { background: #eef4ff; font-weight: 600; }
   tbody tr:nth-child(even) { background: #fafbfd; }
@@ -27,18 +27,49 @@
   .coverage-table th:nth-child(2) { width: 10%; }
   .coverage-table th:nth-child(3) { width: 45%; }
   .num { text-align: right; font-weight: 600; color: #1e4d8c; }
-  .amds { font-size: 12px; color: #333; }
-  .latest-protocol { margin: 8px 0 12px; font-size: 13px; }
+  .amds { font-size: 15px; color: #333; }
+  .latest-protocol { margin: 8px 0 12px; font-size: 15px; }
 
   .trial-menu { display: flex; gap: 4px; flex-wrap: wrap; align-items: center;
                 padding: 8px 12px; background: #eef4ff;
                 border: 1px solid #cfd8e6; border-radius: 4px;
-                font-size: 13px; margin-bottom: 16px; }
+                font-size: 15px; margin-bottom: 16px; }
   .trial-menu a { padding: 4px 10px; border-radius: 3px;
-                  color: #0563c1; text-decoration: none; }
+                  color: #0563c1; text-decoration: none;
+                  position: relative; }
   .trial-menu a:hover { background: #d8e6f8; }
   .trial-menu a.current { background: #1e4d8c; color: white; font-weight: 600; }
   .trial-menu .sep { color: #999; }
+
+  /* Custom black-on-white-text hover tooltip for menu items */
+  .trial-menu a[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 400;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    pointer-events: none;
+  }
+  .trial-menu a[data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: #000;
+    z-index: 1001;
+    pointer-events: none;
+  }
 
   .main-table th:nth-child(1) { width: 20%; }
   .main-table th:nth-child(2) { width: 11%; }
@@ -52,19 +83,19 @@
   .doc-cell { font-weight: 600; color: #1e4d8c; }
   .date-cell { color: #444; white-space: nowrap; }
   .rationale-cell ul { margin: 4px 0 0; padding-left: 18px; }
-  .rationale-cell li { margin-bottom: 4px; font-size: 14px; }
+  .rationale-cell li { margin-bottom: 4px; font-size: 15px; }
   .rationale-cell p { margin: 0 0 6px; }
   .avail-cell .file { display: block; }
   .avail-cell .tag {
     display: block;
-    font-size: 11px;
+    font-size: 14px;
     color: #707070;
     margin-bottom: 6px;
   }
   .avail-cell .summary-only {
     font-style: italic;
     color: #993300;
-    font-size: 12px;
+    font-size: 15px;
   }
   .controls {
     margin: 8px 0 16px;
@@ -72,14 +103,14 @@
     background: #f4f7fb;
     border: 1px solid #cfd8e6;
     border-radius: 4px;
-    font-size: 13px;
+    font-size: 15px;
     display: inline-block;
   }
   .controls label { cursor: pointer; user-select: none; }
   .controls input[type="checkbox"] { margin-right: 6px; vertical-align: -2px; }
   .footer {
     margin-top: 30px;
-    font-size: 12px;
+    font-size: 15px;
     color: #707070;
     font-style: italic;
     border-top: 1px solid #ddd;
@@ -88,7 +119,7 @@
 </style>
 </head>
 <body>
-<nav class='trial-menu'><a href='index.html' class=''>Index</a><span class='sep'>|</span><a href='c4591001-mth6-amendment-summary-of-changes.html' class=''>C4591001</a><span class='sep'>|</span><a href='c4591007-amendment-summary-of-changes.html' class=''>C4591007</a><span class='sep'>|</span><a href='c4591015-amendment-summary-of-changes.html' class=''>C4591015</a><span class='sep'>|</span><a href='c4591020-amendment-summary-of-changes.html' class='current'>C4591020</a><span class='sep'>|</span><a href='c4591024-amendment-summary-of-changes.html' class=''>C4591024</a><span class='sep'>|</span><a href='moderna-p201-amendment-summary-of-changes.html' class=''>Moderna P201</a><span class='sep'>|</span><a href='moderna-p301-cove-amendment-summary-of-changes.html' class=''>Moderna P301 (COVE)</a><span class='sep'>|</span><a href='az-d8110c00001-amendment-summary-of-changes.html' class=''>AZ D8110C00001</a><span class='sep'>|</span><a href='jj-ensemble-amendment-summary-of-changes.html' class=''>J&amp;J ENSEMBLE</a><span class='sep'>|</span><a href='jj-ensemble2-amendment-summary-of-changes.html' class=''>J&amp;J ENSEMBLE 2</a></nav><h1>C4591020 &mdash; Protocol Amendment Summary of Changes <small style='color:#666;font-size:14px;font-weight:normal;'>(Pfizer healthcare workers / household contacts trial)</small></h1><p class='intro'>Pfizer/BioNTech&rsquo;s Phase 4 real-world effectiveness study of BNT162b2 in U.S. healthcare workers, first responders, and other essential frontline workers, plus their household contacts. Run alongside the pivotal C4591001 trial to capture vaccine effectiveness in higher-exposure occupations and to characterize SARS-CoV-2 transmission dynamics within households of vaccinated participants.</p><h2>Coverage at a glance</h2><p class='latest-protocol'><strong>Latest protocol we have:</strong> <a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S222_M5_c4591020-protocol.pdf' class='mono'>019736_S222_M5_c4591020-protocol.pdf</a></p><table class='coverage-table'><thead><tr><th>Category</th><th>Count</th><th>Amendments</th></tr></thead><tbody><tr><td>Total documents in the history</td><td class='num'>1</td><td class='amds'></td></tr><tr><td>Direct PDFs available</td><td class='num'>1</td><td class='amds'>Original protocol</td></tr><tr><td>Summary-only (date and rationale recorded here, no full PDF available)</td><td class='num'>0</td><td class='amds'>(none)</td></tr></tbody></table><h2>Amendment-by-amendment table</h2>
+<nav class='trial-menu'><a href='index.html' class=''>Index</a><span class='sep'>|</span><a href='c4591001-mth6-amendment-summary-of-changes.html' class='' data-tooltip='Pfizer pivotal Phase 1/2/3 — BNT162b2 / Comirnaty in adults 16+, later 12+'>C4591001</a><span class='sep'>|</span><a href='c4591007-amendment-summary-of-changes.html' class='' data-tooltip='Pfizer pediatric — children 6 months to &lt;12 years'>C4591007</a><span class='sep'>|</span><a href='c4591015-amendment-summary-of-changes.html' class='' data-tooltip='Pfizer maternal immunization — pregnant participants'>C4591015</a><span class='sep'>|</span><a href='c4591020-amendment-summary-of-changes.html' class='current' data-tooltip='Pfizer Phase 4 effectiveness — U.S. healthcare workers and household contacts'>C4591020</a><span class='sep'>|</span><a href='c4591024-amendment-summary-of-changes.html' class='' data-tooltip='Pfizer Phase 2b — BNT162b2 in immunocompromised participants ≥2 years'>C4591024</a><span class='sep'>|</span><a href='moderna-p201-amendment-summary-of-changes.html' class='' data-tooltip='Moderna Phase 2 dose-confirmation — mRNA-1273'>Moderna P201</a><span class='sep'>|</span><a href='moderna-p301-cove-amendment-summary-of-changes.html' class='' data-tooltip='Moderna pivotal Phase 3 (COVE) — mRNA-1273 / Spikevax efficacy trial'>Moderna P301 (COVE)</a><span class='sep'>|</span><a href='az-d8110c00001-amendment-summary-of-changes.html' class='' data-tooltip='AstraZeneca pivotal Phase 3 — AZD1222 / Vaxzevria efficacy trial'>AZ D8110C00001</a><span class='sep'>|</span><a href='jj-ensemble-amendment-summary-of-changes.html' class='' data-tooltip='Janssen Phase 3 ENSEMBLE — single-dose Ad26.COV2.S efficacy'>J&amp;J ENSEMBLE</a><span class='sep'>|</span><a href='jj-ensemble2-amendment-summary-of-changes.html' class='' data-tooltip='Janssen Phase 3 ENSEMBLE 2 — two-dose Ad26.COV2.S efficacy'>J&amp;J ENSEMBLE 2</a></nav><h1>C4591020 &mdash; Protocol Amendment Summary of Changes <small style='color:#666;font-size:14px;font-weight:normal;'>(Pfizer healthcare workers / household contacts trial)</small></h1><p class='intro'>Pfizer/BioNTech&rsquo;s Phase 4 real-world effectiveness study of BNT162b2 in U.S. healthcare workers, first responders, and other essential frontline workers, plus their household contacts. Run alongside the pivotal C4591001 trial to capture vaccine effectiveness in higher-exposure occupations and to characterize SARS-CoV-2 transmission dynamics within households of vaccinated participants.</p><h2>Coverage at a glance</h2><p class='latest-protocol'><strong>Latest protocol we have:</strong> <a href='https://phmpt.org/wp-content/uploads/2023/10/019736_S222_M5_c4591020-protocol.pdf' class='mono'>019736_S222_M5_c4591020-protocol.pdf</a></p><table class='coverage-table'><thead><tr><th>Category</th><th>Count</th><th>Amendments</th></tr></thead><tbody><tr><td>Total documents in the history</td><td class='num'>1</td><td class='amds'></td></tr><tr><td>Direct PDFs available</td><td class='num'>1</td><td class='amds'>Original protocol</td></tr><tr><td>Summary-only (date and rationale recorded here, no full PDF available)</td><td class='num'>0</td><td class='amds'>(none)</td></tr></tbody></table><h2>Amendment-by-amendment table</h2>
 <div class='controls'>
   <label>
     <input type='checkbox' id='toggle-summary' checked

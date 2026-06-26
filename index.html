@@ -5,49 +5,120 @@
 <title>COVID-19 Vaccine Trial Protocols — Amendment Histories</title>
 <style>
   body {
-    font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #1c1c1c;
     max-width: 1280px;
     margin: 24px auto;
     padding: 0 24px;
     background: #fdfdfd;
   }
-  h1 { color: #1e4d8c; font-size: 22px; margin: 0 0 8px; }
-  h2 { color: #1e4d8c; font-size: 16px; margin: 24px 0 8px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+  h1 { color: #1e4d8c; font-size: 25px; margin: 0 0 8px; }
+  h2 { color: #1e4d8c; font-size: 19px; margin: 24px 0 8px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
   .intro { color: #444; font-style: italic; margin-bottom: 20px; }
   a { color: #0563c1; text-decoration: none; }
   a:hover { text-decoration: underline; }
-  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; font-size: 13px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; font-size: 15px; }
   th, td { border: 1px solid #cfd8e6; padding: 8px 10px; text-align: left; vertical-align: top; }
   th { background: #eef4ff; font-weight: 600; }
   tbody tr:nth-child(even) { background: #fafbfd; }
   .trial-code { font-weight: 600; color: #1e4d8c; }
   .num { text-align: right; font-weight: 600; color: #1e4d8c; }
+  .report-col { white-space: nowrap; width: 1%; }
   .footer {
     margin-top: 30px;
-    font-size: 12px;
+    font-size: 15px;
     color: #707070;
     font-style: italic;
     border-top: 1px solid #ddd;
     padding-top: 12px;
   }
+  th.sortable { cursor: pointer; user-select: none; position: relative; padding-right: 22px; }
+  th.sortable:hover { background: #d8e6f8; }
+  th.sortable::after { content: '\2195'; position: absolute; right: 8px; color: #999; font-size: 13px; }
+  th.sortable.asc::after { content: '\25B2'; color: #1e4d8c; }
+  th.sortable.desc::after { content: '\25BC'; color: #1e4d8c; }
 
   .trial-menu { display: flex; gap: 4px; flex-wrap: wrap; align-items: center;
                 padding: 8px 12px; background: #eef4ff;
                 border: 1px solid #cfd8e6; border-radius: 4px;
-                font-size: 13px; margin-bottom: 16px; }
+                font-size: 15px; margin-bottom: 16px; }
   .trial-menu a { padding: 4px 10px; border-radius: 3px;
-                  color: #0563c1; text-decoration: none; }
+                  color: #0563c1; text-decoration: none;
+                  position: relative; }
   .trial-menu a:hover { background: #d8e6f8; }
   .trial-menu a.current { background: #1e4d8c; color: white; font-weight: 600; }
   .trial-menu .sep { color: #999; }
 
+  /* Custom black-on-white-text hover tooltip for menu items */
+  .trial-menu a[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 400;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    pointer-events: none;
+  }
+  .trial-menu a[data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: #000;
+    z-index: 1001;
+    pointer-events: none;
+  }
+
 </style>
 </head>
 <body>
-<nav class='trial-menu'><a href='index.html' class='current'>Index</a><span class='sep'>|</span><a href='c4591001-mth6-amendment-summary-of-changes.html' class=''>C4591001</a><span class='sep'>|</span><a href='c4591007-amendment-summary-of-changes.html' class=''>C4591007</a><span class='sep'>|</span><a href='c4591015-amendment-summary-of-changes.html' class=''>C4591015</a><span class='sep'>|</span><a href='c4591020-amendment-summary-of-changes.html' class=''>C4591020</a><span class='sep'>|</span><a href='c4591024-amendment-summary-of-changes.html' class=''>C4591024</a><span class='sep'>|</span><a href='moderna-p201-amendment-summary-of-changes.html' class=''>Moderna P201</a><span class='sep'>|</span><a href='moderna-p301-cove-amendment-summary-of-changes.html' class=''>Moderna P301 (COVE)</a><span class='sep'>|</span><a href='az-d8110c00001-amendment-summary-of-changes.html' class=''>AZ D8110C00001</a><span class='sep'>|</span><a href='jj-ensemble-amendment-summary-of-changes.html' class=''>J&amp;J ENSEMBLE</a><span class='sep'>|</span><a href='jj-ensemble2-amendment-summary-of-changes.html' class=''>J&amp;J ENSEMBLE 2</a></nav><h1>COVID-19 Vaccine Trial Protocols &mdash; Amendment Histories</h1><p class='intro'>Ten pivotal COVID-19 vaccine trial protocols (Pfizer/BioNTech, Moderna, AstraZeneca, Janssen / Johnson&nbsp;&amp; Johnson) with their full amendment histories extracted verbatim from each protocol PDF&rsquo;s &lsquo;Summary of Changes&rsquo; section. Sources: the PHMPT FOIA release at phmpt.org, clinicaltrials.gov, the NEJM 2020 protocol supplement, and the Internet Archive Wayback Machine. Use the menu above or the table below to jump to any trial.</p><h2>Trials covered</h2><table><thead><tr><th>Trial code</th><th>Sponsor</th><th>Purpose</th><th class='num'>Total entries<br>in history</th><th class='num'>Direct PDFs<br>available</th><th>Report</th></tr></thead><tbody><tr onclick="location.href='c4591001-mth6-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>C4591001</td><td>Pfizer / BioNTech</td><td>Pivotal Phase 1/2/3 efficacy trial (initially adults 16+, later expanded to 12+); Amendments 1–20 sourced from Pfizer&#x27;s Final Protocol Amendment 20 on clinicaltrials.gov</td><td class='num'>22</td><td class='num'>6</td><td><a href='c4591001-mth6-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='c4591007-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>C4591007</td><td>Pfizer / BioNTech</td><td>Pediatric efficacy/safety trial in children 6 months to &lt;12 years</td><td class='num'>4</td><td class='num'>3</td><td><a href='c4591007-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='c4591015-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>C4591015</td><td>Pfizer / BioNTech</td><td>Maternal immunization trial — safety/immunogenicity in pregnant participants</td><td class='num'>3</td><td class='num'>1</td><td><a href='c4591015-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='c4591020-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>C4591020</td><td>Pfizer / BioNTech</td><td>Phase 4 effectiveness study in healthcare workers and household contacts</td><td class='num'>1</td><td class='num'>1</td><td><a href='c4591020-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='c4591024-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>C4591024</td><td>Pfizer / BioNTech</td><td>Phase 2b open-label safety/tolerability/immunogenicity study in immunocompromised participants ≥2 years; recruitment stopped before Amendment 5</td><td class='num'>6</td><td class='num'>1</td><td><a href='c4591024-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='moderna-p201-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>Moderna P201</td><td>ModernaTX</td><td>Phase 2 dose-confirmation trial of mRNA-1273</td><td class='num'>4</td><td class='num'>1</td><td><a href='moderna-p201-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='moderna-p301-cove-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>Moderna P301 (COVE)</td><td>ModernaTX</td><td>COVE — pivotal Phase 3 randomized efficacy study of mRNA-1273 in adults 18+</td><td class='num'>5</td><td class='num'>1</td><td><a href='moderna-p301-cove-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='az-d8110c00001-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>AZ D8110C00001</td><td>AstraZeneca</td><td>Pivotal Phase 3 randomized double-blind placebo-controlled efficacy trial of AZD1222 (ChAdOx1-S; Vaxzevria) in adults ≥18; ~32,400 participants across US, Chile, Peru</td><td class='num'>7</td><td class='num'>1</td><td><a href='az-d8110c00001-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='jj-ensemble-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>J&amp;J ENSEMBLE</td><td>Janssen / Johnson &amp; Johnson</td><td>Pivotal Phase 3 randomized double-blind placebo-controlled efficacy trial of single-dose Ad26.COV2.S in adults ≥18</td><td class='num'>8</td><td class='num'>1</td><td><a href='jj-ensemble-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='jj-ensemble2-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>J&amp;J ENSEMBLE 2</td><td>Janssen / Johnson &amp; Johnson</td><td>Pivotal Phase 3 randomized double-blind placebo-controlled efficacy trial of two-dose Ad26.COV2.S in adults ≥18</td><td class='num'>8</td><td class='num'>1</td><td><a href='jj-ensemble2-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr></tbody></table><p class='footer'>
+<nav class='trial-menu'><a href='index.html' class='current'>Index</a><span class='sep'>|</span><a href='c4591001-mth6-amendment-summary-of-changes.html' class='' data-tooltip='Pfizer pivotal Phase 1/2/3 — BNT162b2 / Comirnaty in adults 16+, later 12+'>C4591001</a><span class='sep'>|</span><a href='c4591007-amendment-summary-of-changes.html' class='' data-tooltip='Pfizer pediatric — children 6 months to &lt;12 years'>C4591007</a><span class='sep'>|</span><a href='c4591015-amendment-summary-of-changes.html' class='' data-tooltip='Pfizer maternal immunization — pregnant participants'>C4591015</a><span class='sep'>|</span><a href='c4591020-amendment-summary-of-changes.html' class='' data-tooltip='Pfizer Phase 4 effectiveness — U.S. healthcare workers and household contacts'>C4591020</a><span class='sep'>|</span><a href='c4591024-amendment-summary-of-changes.html' class='' data-tooltip='Pfizer Phase 2b — BNT162b2 in immunocompromised participants ≥2 years'>C4591024</a><span class='sep'>|</span><a href='moderna-p201-amendment-summary-of-changes.html' class='' data-tooltip='Moderna Phase 2 dose-confirmation — mRNA-1273'>Moderna P201</a><span class='sep'>|</span><a href='moderna-p301-cove-amendment-summary-of-changes.html' class='' data-tooltip='Moderna pivotal Phase 3 (COVE) — mRNA-1273 / Spikevax efficacy trial'>Moderna P301 (COVE)</a><span class='sep'>|</span><a href='az-d8110c00001-amendment-summary-of-changes.html' class='' data-tooltip='AstraZeneca pivotal Phase 3 — AZD1222 / Vaxzevria efficacy trial'>AZ D8110C00001</a><span class='sep'>|</span><a href='jj-ensemble-amendment-summary-of-changes.html' class='' data-tooltip='Janssen Phase 3 ENSEMBLE — single-dose Ad26.COV2.S efficacy'>J&amp;J ENSEMBLE</a><span class='sep'>|</span><a href='jj-ensemble2-amendment-summary-of-changes.html' class='' data-tooltip='Janssen Phase 3 ENSEMBLE 2 — two-dose Ad26.COV2.S efficacy'>J&amp;J ENSEMBLE 2</a></nav><h1>COVID-19 Vaccine Trial Protocols &mdash; Amendment Histories</h1><p class='intro'>Ten pivotal COVID-19 vaccine trial protocols (Pfizer/BioNTech, Moderna, AstraZeneca, Janssen / Johnson&nbsp;&amp; Johnson) with their full amendment histories extracted verbatim from each protocol PDF&rsquo;s &lsquo;Summary of Changes&rsquo; section. Sources: the PHMPT FOIA release at phmpt.org, clinicaltrials.gov, the NEJM 2020 protocol supplement, and the Internet Archive Wayback Machine. Use the menu above or the table below to jump to any trial.</p><h2>Trials covered</h2><table id='trials-table'><thead><tr><th class='sortable' data-sort='str'>Trial code</th><th class='sortable' data-sort='str'>Sponsor</th><th class='sortable' data-sort='str'>Purpose</th><th class='sortable num' data-sort='num'>Total entries<br>in history</th><th class='sortable num' data-sort='num'>Direct PDFs<br>available</th><th class='report-col'>Report</th></tr></thead><tbody><tr onclick="location.href='c4591001-mth6-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>C4591001</td><td>Pfizer / BioNTech</td><td>Pivotal Phase 1/2/3 efficacy trial (initially adults 16+, later expanded to 12+); Amendments 1–20 sourced from Pfizer&#x27;s Final Protocol Amendment 20 on clinicaltrials.gov</td><td class='num'>22</td><td class='num'>6</td><td class='report-col'><a href='c4591001-mth6-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='c4591007-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>C4591007</td><td>Pfizer / BioNTech</td><td>Pediatric efficacy/safety trial in children 6 months to &lt;12 years</td><td class='num'>4</td><td class='num'>3</td><td class='report-col'><a href='c4591007-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='c4591015-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>C4591015</td><td>Pfizer / BioNTech</td><td>Maternal immunization trial — safety/immunogenicity in pregnant participants</td><td class='num'>3</td><td class='num'>1</td><td class='report-col'><a href='c4591015-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='c4591020-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>C4591020</td><td>Pfizer / BioNTech</td><td>Phase 4 effectiveness study in healthcare workers and household contacts</td><td class='num'>1</td><td class='num'>1</td><td class='report-col'><a href='c4591020-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='c4591024-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>C4591024</td><td>Pfizer / BioNTech</td><td>Phase 2b open-label safety/tolerability/immunogenicity study in immunocompromised participants ≥2 years; recruitment stopped before Amendment 5</td><td class='num'>6</td><td class='num'>1</td><td class='report-col'><a href='c4591024-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='moderna-p201-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>Moderna P201</td><td>ModernaTX</td><td>Phase 2 dose-confirmation trial of mRNA-1273</td><td class='num'>4</td><td class='num'>1</td><td class='report-col'><a href='moderna-p201-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='moderna-p301-cove-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>Moderna P301 (COVE)</td><td>ModernaTX</td><td>COVE — pivotal Phase 3 randomized efficacy study of mRNA-1273 in adults 18+</td><td class='num'>5</td><td class='num'>1</td><td class='report-col'><a href='moderna-p301-cove-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='az-d8110c00001-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>AZ D8110C00001</td><td>AstraZeneca</td><td>Pivotal Phase 3 randomized double-blind placebo-controlled efficacy trial of AZD1222 (ChAdOx1-S; Vaxzevria) in adults ≥18; ~32,400 participants across US, Chile, Peru</td><td class='num'>7</td><td class='num'>1</td><td class='report-col'><a href='az-d8110c00001-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='jj-ensemble-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>J&amp;J ENSEMBLE</td><td>Janssen / Johnson &amp; Johnson</td><td>Pivotal Phase 3 randomized double-blind placebo-controlled efficacy trial of single-dose Ad26.COV2.S in adults ≥18</td><td class='num'>8</td><td class='num'>1</td><td class='report-col'><a href='jj-ensemble-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr><tr onclick="location.href='jj-ensemble2-amendment-summary-of-changes.html'" style="cursor:pointer"><td class='trial-code'>J&amp;J ENSEMBLE 2</td><td>Janssen / Johnson &amp; Johnson</td><td>Pivotal Phase 3 randomized double-blind placebo-controlled efficacy trial of two-dose Ad26.COV2.S in adults ≥18</td><td class='num'>8</td><td class='num'>1</td><td class='report-col'><a href='jj-ensemble2-amendment-summary-of-changes.html'>Open report &rarr;</a></td></tr></tbody></table><p class='footer'>
 Compiled from publicly-available trial-protocol PDFs hosted by the
 PHMPT FOIA release (<a href='https://phmpt.org/'>phmpt.org</a>),
 clinicaltrials.gov, the NEJM 2020 protocol supplement, and the
 Internet Archive Wayback Machine.
-</p></body></html>
+</p><script>
+(function(){
+  const table = document.getElementById('trials-table');
+  if (!table) return;
+  const tbody = table.tBodies[0];
+  const headers = table.tHead.rows[0].cells;
+  for (let i = 0; i < headers.length; i++) {
+    const th = headers[i];
+    if (!th.classList.contains('sortable')) continue;
+    const colIndex = i;
+    const sortType = th.dataset.sort || 'str';
+    th.addEventListener('click', function(ev){
+      ev.stopPropagation();
+      const dir = th.classList.contains('asc') ? 'desc' : 'asc';
+      // Clear arrows on other headers
+      for (const other of headers) other.classList.remove('asc','desc');
+      th.classList.add(dir);
+      const rows = Array.from(tbody.rows);
+      rows.sort(function(a, b){
+        let av = a.cells[colIndex].textContent.trim();
+        let bv = b.cells[colIndex].textContent.trim();
+        if (sortType === 'num') {
+          av = parseFloat(av) || 0;
+          bv = parseFloat(bv) || 0;
+          return dir === 'asc' ? av - bv : bv - av;
+        }
+        return dir === 'asc'
+          ? av.localeCompare(bv, undefined, {numeric: true, sensitivity: 'base'})
+          : bv.localeCompare(av, undefined, {numeric: true, sensitivity: 'base'});
+      });
+      for (const r of rows) tbody.appendChild(r);
+    });
+  }
+})();
+</script></body></html>
