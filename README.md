@@ -1,8 +1,8 @@
-# trialprotocols.com — COVID-19 Vaccine Trial Protocol Amendment Histories
+# TrialProtocols.com — COVID-19 Vaccine Trial Protocol Amendment Histories
 
 A compiled, verbatim record of how the protocols for ten pivotal COVID-19 vaccine clinical trials evolved over time — assembled from public sources and presented side-by-side with the source documents.
 
-Live site: **https://trialprotocols.com/**
+Live site: [**TrialProtocols.com**](https://trialprotocols.com/)
 
 ## Trials covered
 
